@@ -22,6 +22,9 @@ public interface IssuedBooksDAO {
     @Query("DELETE FROM IssuedBooks  WHERE  id LIKE:id")
     void DeleteIssuedBook(int id);
 
+    @Query("SELECT COUNT(UserId) FROM IssuedBooks IB WHERE IB.UserId LIKE :UserId")
+    int  ReturnTotalIssuedBooks(int UserId);
+
 
 
 }

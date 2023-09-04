@@ -49,7 +49,7 @@ public class Signup extends AppCompatActivity {
         String Password=UserPassword.getText().toString();
         User user=new User(Name,Email,Password,0);
         lmsViewModel.adduser(user);
-        Intent intent=new Intent(Signup.this, Long.class);
+        Intent intent=new Intent(Signup.this, LoginActivity.class);
         startActivity(intent);
 
     }

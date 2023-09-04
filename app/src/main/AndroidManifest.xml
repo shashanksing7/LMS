@@ -13,6 +13,12 @@
         android:theme="@style/Theme.LMS_ACXIOM_CONSULTING_PRACTICAL"
         tools:targetApi="31">
         <activity
+            android:name=".AdminSearchBook"
+            android:exported="false" />
+        <activity
+            android:name=".AdminUserSearch"
+            android:exported="false" />
+        <activity
             android:name=".AdminHomeScreen"
             android:exported="false" />
         <activity
@@ -23,9 +29,7 @@
             android:exported="false" />
         <activity
             android:name=".TakeBook"
-            android:label="Take Book">
-        </activity>
-
+            android:label="Take Book" />
         <activity
             android:name=".Signup"
             android:exported="false" />

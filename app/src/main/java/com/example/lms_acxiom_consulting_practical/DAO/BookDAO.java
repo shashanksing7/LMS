@@ -29,5 +29,17 @@ public interface BookDAO {
 
     @Query("SELECT BookIssued FROM Book WHERE BookId LIKE:BookId")
     Boolean BookIssuedOrNot(int BookId);
+
+    @Query("SELECT * FROM Book ")
+    List<Book> GetBooks();
+    @Query("DELETE FROM Book  WHERE  BookId LIKE:id")
+    void DeleteBook(int id);
+
+    @Query("SELECT COUNT(BookId) FROM Book WHERE BookIssued =0")
+    int  CountAllBook();
+
+    @Query("SELECT COUNT(BookId) FROM Book WHERE BookIssued =1")
+    int  CountAllIssuedBook();
+
 }
 

@@ -82,4 +82,35 @@ public  class Repository {
         return  bookDAO.BookIssuedOrNot(BookId);
     }
 
+    public int BooksBorrowed(int UserId){
+       return userDAO.BooksBorrowed(UserId);
+    }
+    public void UpdateBooksBorrowed(int UserId,int nOfBooksBORROWED){
+        userDAO.UpdateBookBorrowed(UserId,nOfBooksBORROWED);
+    }
+
+    public List<User> ReturnAllUser(){
+        return  userDAO.ReturnAllUser();
+    }
+
+    public List<User> ReturnSearchUser(String username){
+        return  userDAO.ReturnSearchUser(username);
+    }
+    public List<Book> GetBook(){
+        return  bookDAO.GetBooks();
+    }
+    public void DeleteBook(int id){
+        bookDAO.DeleteBook(id);
+    }
+    public int CountAllBook(){
+        return  bookDAO.CountAllBook();
+    }
+    public int CountAllIssuedBook(){
+        return  bookDAO.CountAllIssuedBook();
+    }
+
+    public int ReturnAllIssuedBooks(int UserId){
+        return  issuedBooksDAO.ReturnTotalIssuedBooks(UserId);
+    }
+
 }

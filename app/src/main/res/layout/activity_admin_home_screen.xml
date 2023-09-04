@@ -1,55 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".AdminHomeScreen">
 
+
     <EditText
+
         android:id="@+id/UserSignUpName"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="196dp"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
         android:hint="Book Name"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="@+id/UserSignUpEmail"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/UserSignUpEmail"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="30sp" />
+
 
     <EditText
         android:id="@+id/UserSignUpEmail"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="204dp"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
         android:hint="Author"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UserSignUpName"
-        app:layout_constraintVertical_bias="0.125" />
+        android:textSize="30sp" />
 
-    <androidx.appcompat.widget.AppCompatButton
+
+    <Button
         android:id="@+id/SignupButton"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="Add"
+        android:layout_margin="20dp"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/UserSignUpEmail"
-        app:layout_constraintHorizontal_bias="0.277"
-        app:layout_constraintStart_toStartOf="@+id/UserSignUpEmail"
-        app:layout_constraintTop_toBottomOf="@+id/UserSignUpEmail"
-        app:layout_constraintVertical_bias="0.097" />
+        android:textSize="20dp"
+        android:layout_marginTop="16dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/totalBooksIssued"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Books Issued: 0"
+    android:textColor="@color/black"
+        android:layout_margin="20dp"
+    android:textSize="24dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="16dp" />
+
+    <!-- TextView for Total Available Books -->
+    <TextView
+        android:id="@+id/totalavilable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Available Books: 0"
+        android:layout_margin="20dp"
+    android:textColor="@color/black"
+    android:textSize="24dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="8dp" />
+
+
+    <Button
+        android:id="@+id/searchBooksButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Books"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:layout_margin="20dp"
+        android:textSize="24dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/searchUserButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search User"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:layout_margin="20dp"
+        android:textSize="24dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

@@ -27,6 +27,8 @@ public class UserHome extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
+    int TotalIssuedBook=0;
+
     IssuedBooksAdapter issuedBooksAdapter;
 
     @SuppressLint("MissingInflatedId")
@@ -38,6 +40,8 @@ public class UserHome extends AppCompatActivity {
         BooksBorrowed=findViewById(R.id.BooksBorrowed);
         // Initialize the ViewModel
         lmsViewModel = new ViewModelProvider(this).get(LMSViewModel.class);
+
+
         recyclerView=findViewById(R.id.recyclerView);
         SearchButton=findViewById(R.id.searchBooksButton);
 
@@ -52,8 +56,10 @@ public class UserHome extends AppCompatActivity {
             UserName.setText("Name"+":"+userName);
 
             // Set the text of BooksBorrowed TextView (assuming it's an integer)
-            BooksBorrowed.setText(String.valueOf("BooksBorrowed"+":"+bookBorrowed));
+//            BooksBorrowed.setText(String.valueOf("BooksBorrowed"+":"+bookBorrowed));
             UserId=receivedBundle.getInt("UserId");
+            TotalIssuedBook=lmsViewModel.ReturnAllIssuedBooks(UserId);
+            BooksBorrowed.setText(String.valueOf("BooksBorrowed"+":"+String.valueOf(TotalIssuedBook)));
 
         }
 
@@ -64,6 +70,8 @@ public class UserHome extends AppCompatActivity {
 
                 lmsViewModel.DeleteIssuedBooks(BookId);
                 lmsViewModel.TAkeBAckBooks(BooksId);
+                int nOfBorrowedBooks=lmsViewModel.BooksBorrowed(UserId);
+                lmsViewModel.UpdateBooksBorrowed(UserId,nOfBorrowedBooks-1);
                 issuedBooksAdapter.getData(lmsViewModel.GetIssuedBooks(UserId));
 
 
@@ -83,11 +91,14 @@ public class UserHome extends AppCompatActivity {
             }
         });
 
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         issuedBooksAdapter.getData(lmsViewModel.GetIssuedBooks(UserId));
+        TotalIssuedBook=lmsViewModel.ReturnAllIssuedBooks(UserId);
+        BooksBorrowed.setText(String.valueOf("BooksBorrowed"+":"+String.valueOf(TotalIssuedBook)));
     }
 }

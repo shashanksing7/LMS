@@ -49,6 +49,8 @@ public class TakeBook extends AppCompatActivity {
                 if(lmsViewModel.BookIssuedOrNot(BookId)){
                     IssuedBooks issuedBooks=new IssuedBooks(BookName,AuthorName,BookId,Userid);
                     lmsViewModel.InsertIssuedBooks(issuedBooks);
+                    int nOfBorrowedBooks=lmsViewModel.BooksBorrowed(Userid);
+                    lmsViewModel.UpdateBooksBorrowed(Userid,nOfBorrowedBooks+1);
                     takeBooksAdapter.getData(lmsViewModel.GetAllBook());
                 }
                 else {

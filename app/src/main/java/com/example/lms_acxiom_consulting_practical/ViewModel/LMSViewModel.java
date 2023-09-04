@@ -72,5 +72,40 @@ public class LMSViewModel extends AndroidViewModel {
         return  repository.BookIssuedOrNot(BookId);
     }
 
+    public int BooksBorrowed(int UserId){
+        return repository.BooksBorrowed(UserId);
+    }
+
+    public void UpdateBooksBorrowed(int UserId,int nOfBooksBORROWED){
+        repository.UpdateBooksBorrowed(UserId,nOfBooksBORROWED);
+    }
+
+    public List<User> ReturnAllUser(){
+        return  repository.ReturnAllUser();
+    }
+
+    public List<User> ReturnSearchUser(String username){
+        return  repository.ReturnSearchUser(username);
+    }
+
+    public List<Book> GetBook(){
+        return  repository.GetBook();
+    }
+    public void DeleteBook(int id){
+        repository.DeleteBook(id);
+    }
+
+    public int CountAllBook(){
+        return  repository.CountAllBook();
+    }
+    public int CountAllIssuedBook(){
+        return  repository.CountAllIssuedBook();
+    }
+    public int ReturnAllIssuedBooks(int UserId){
+        return  repository.ReturnAllIssuedBooks(UserId);
+    }
+
+
+
 
 }
